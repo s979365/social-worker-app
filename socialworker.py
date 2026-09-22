@@ -13,6 +13,10 @@ help = [
     "parenting classes" , "assisted living" , "protective custody" , "transitional shelters"
 ]
 
+# cases = [
+#     {'case number': 1, 'complaint': 'domestic violence', 'service offered': 'safe housing', 'last meeting': '8/2/2026', 'notes': []},
+# ]
+
 
 # Create a dictionary connecting cases to help
 # case_number = {}
