@@ -3,6 +3,7 @@
 # Aiwin will build the lists + dictionary and the functions/starting the functions and names
 # Nashayla will build within the functions for the CREATE/READ/UPDATE/DELETE
 # Add case numbers
+#Case workers can only have once case in each category so there isnt too much of a workload
 cases = [
    "domestic violence" , "self harm" , "orphaned child" , "drug abuse" ,
    "child neglect" , "geriatric care" , "child murderers" , "homelessness"
@@ -33,10 +34,10 @@ print(case_number)
 # The client notes
 notes = {}
 #new_case attributes a case number that either corresponds to domestic violence like 1.1, 1.2, 1.3 
-def new_case()
-#strike_count counts number of strikes a case already has and puts them into the notes section 
-def strike_count()
-#status_report updates status of date from one of the case options to a different one or to "none"
-def status_report()
-#calc_solution prints one of the keys in the dictionary along with the notes updated to that portion 
-def calc_solution()
+# def new_case(case):
+#
+# #status_report updates status of date from one of the case options to a different one or to "none"
+# def status_report():
+    
+# #calc_solution prints one of the keys in the dictionary along with the notes updated to that portion 
+# def calc_solution():
