@@ -35,7 +35,7 @@ def new_case(case):
     selected_case["case name"] = name_case
     print(f"Your new case {name_case} has been added under the {selected_case['complaint']} class.")
 
-# #status_report updates status of date from one of the case options to a different one or to "none"
+# #status_report updates status of date from one of the case options to a different one
 def status_report():
     for number, category in enumerate(cases, start=1):
         case_name = category["case name"] or category["complaint"]
@@ -66,7 +66,8 @@ def calc_solution():
     print(f"Service Offered: {selected_case['service offered']}")
     print(f"Status Report: {selected_case['status report']}")
     print(f"Notes: {selected_case['notes']}")
-#Nashayla's addition to change multiple things if needed
+
+#Nashayla's addition to change multiple things if needed like a drop down menu
 #might break
 def initial_choices():
     while True:
@@ -109,7 +110,7 @@ def initial_choices():
         elif menu_choice == "6":
             for case in cases:
                 print(f"{case['case number']}. {case['case name'] or case['complaint']}")
-            case_number = int(input("Which case would you like to clear? "))
+            case_number = int(input("Which case would you like to mark as resolved? "))
             case = select_case(case_number)
             case["case name"], case["status report"], case["notes"] = "", "", []
             print("Case information has been resolved. You will no longer be able to access the digital version of this case.")
