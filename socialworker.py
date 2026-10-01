@@ -1,7 +1,3 @@
-# Code your program directly here or include a link to your work here
-# Aiwin and Nashayla's code yayyayayya
-# Aiwin will build the lists + dictionary and the functions/starting the functions and names
-# Nashayla will build within the functions for the CREATE/READ/UPDATE/DELETE
 # Add case numbers
 #Case workers can only have once case in each category so there isnt too much of a workload
 #poverty aid is an example space to see if everything runs smoothly
@@ -35,7 +31,7 @@ def new_case(case):
     selected_case["case name"] = name_case
     print(f"Your new case {name_case} has been added under the {selected_case['complaint']} class.")
 
-# #status_report updates status of date from one of the case options to a different one
+# #status_report updates status of date from one of the case options to a different one or to "none"
 def status_report():
     for number, category in enumerate(cases, start=1):
         case_name = category["case name"] or category["complaint"]
@@ -57,7 +53,7 @@ def status_report():
 def calc_solution():
     for case in cases:
         name_case = case["case name"] or case["complaint"]
-        print(f"{case['case number']}. {name}")
+        print(f"{case['case number']}. {name_case}")
     case_number = int(input("What case would you like the full overview for? "))
     selected_case = select_case(case_number)
     print(f"Case Number: {selected_case['case number']}")
@@ -66,8 +62,7 @@ def calc_solution():
     print(f"Service Offered: {selected_case['service offered']}")
     print(f"Status Report: {selected_case['status report']}")
     print(f"Notes: {selected_case['notes']}")
-
-#Nashayla's addition to change multiple things if needed like a drop down menu
+#Nashayla's addition to change multiple things if needed
 #might break
 def initial_choices():
     while True:
@@ -83,7 +78,7 @@ def initial_choices():
         elif menu_choice == '3':
             for case in cases:
                 name_case = case["case name"] or case["complaint"]
-                print(f"{case['case number']}. {name}")
+                print(f"{case['case number']}. {name_case}")
 
             case_number = int(input("Which case are you adding notes to? "))
             selected_case = select_case(case_number)
@@ -93,8 +88,8 @@ def initial_choices():
 
         elif menu_choice == '4':
             for case in cases:
-                name = case["case name"] or case["complaint"]
-                print(f"{case['case number']}. {name}")
+                name_case = case["case name"] or case["complaint"]
+                print(f"{case['case number']}. {name_case}")
 
             case_number = int(input("Which case notes do you want to look at "))
             selected_case = select_case(case_number)
@@ -110,7 +105,7 @@ def initial_choices():
         elif menu_choice == "6":
             for case in cases:
                 print(f"{case['case number']}. {case['case name'] or case['complaint']}")
-            case_number = int(input("Which case would you like to mark as resolved? "))
+            case_number = int(input("Which case would you like to clear? "))
             case = select_case(case_number)
             case["case name"], case["status report"], case["notes"] = "", "", []
             print("Case information has been resolved. You will no longer be able to access the digital version of this case.")
